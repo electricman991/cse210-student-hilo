@@ -2,7 +2,8 @@
 from game.dealer import Dealer
 
 def main():
-    pass
+    dealer = Dealer()
+    dealer.start_game()
 
 if __name__ == "__main__":
     main()
