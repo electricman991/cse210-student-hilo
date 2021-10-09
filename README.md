@@ -35,7 +35,6 @@ root                    (project root folder)
 
 ## Authors
 ---
-* TODO: Add your names and emails here
 * Carl Bialorucki <carl.bialorucki@byui.edu>
 * Jake Corn <corn614@gmail.com>
 * Karla Sommerfeldt <kryn5796@yahoo.ca>
