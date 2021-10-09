@@ -10,41 +10,52 @@ class Dealer:
         player (Player): An instance of a class of objects known as Player.
     """
 
-    def __int__(self):
+    def __init__(self):
         """Class constructor.
         
         Args:
             self (Dealer): An instance of Dealer
         """
-        self.new_card = True
-        self.score = 300
+        self.keep_playing = 'y'
         self.player = Player()
 
-    def start_game():
+    def start_game(self):
         """Starts the game loop to control the sequence of play.
         
         Args:
             self (Director): an instance of Director.
         """
+        while self.keep_playing == 'y':
+            self.get_inputs()
+            self.do_updates()
+            self.do_outputs()
     
     
     
-    def get_inputs():
+    def get_inputs(self):
         """Gets the input after each round.
         
         Args:
             self(Dealer): An intance of Dealer"""
+        
+        self.player.get_card()
 
 
-    def updates_score(self):
+    def do_updates(self):
         """Updates the important game information for each round of play. In 
         this case, that means updating the score.
 
         Args:
             self (Director): An instance of Dealer.
         """
+        
+        return self.player.points
 
-    def outputs(self):
+            
+        
+
+
+    def do_outputs(self):
         """Outputs the important game information for each round of play. In 
         this case, that means the player guessed high or low and the points
         associated with that
@@ -52,3 +63,15 @@ class Dealer:
         Args:
             self (Director): An instance of Director.
         """
+        if self.player.can_play():
+            self.player.higher_or_lower()
+            print(f'Your score is: {self.player.points}')
+            self.keep_playing = input('Keep playing? [y/n]: ')
+        else:
+            self.new_card = False
+            print(f'Your score is: {self.score}')
+            print('Game over')
+
+
+        
+        
